@@ -8,7 +8,10 @@ import android.provider.Settings
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        startActivity(Intent(Settings.ACTION_SETTINGS))
+        val intentSettings = Intent()
+        intentSettings.setPackage("com.android.settings")
+        intentSettings.addCategory(Intent.CATEGORY_LAUNCHER)
+        startActivity(intentSettings)
         super.finish()
     }
 }
